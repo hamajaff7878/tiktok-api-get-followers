@@ -4,10 +4,10 @@ import csv
 
 # Get your API key here: https://scraptik.com
 
-scraptik_apikey = "ENTER API KEY HERE"
+scraptik_apikey = "7ama.s01"
 
-#Use Scraptik "Username to ID" under Services if you need to look it up
-user_id = "ENTER USER ID HERE"
+#Use Scraptik "7ama.s01" under Services if you need to look it up
+user_id = "7ama.s01"
 
 fieldnames = [
     'unique_id',
@@ -32,12 +32,12 @@ with open(r'data.csv', 'w', encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writerow(row)
         
-def get_followers(user_id, max_time):
+def get_followers(7ama.s01, max_time):
     try:
         url = "https://scraptik.p.rapidapi.com/list-followers"
         
         querystring = {
-            "user_id": str(user_id),
+            "user_id": str(7ama.s01),
             "count": "100",
             "max_time": str(max_time)
         }
@@ -64,7 +64,7 @@ def get_followers(user_id, max_time):
                 writer.writerow(row)
 
         if r["has_more"]:
-            get_followers(user_id, r["min_time"])
+            get_followers(7ama.s01, r["min_time"])
 
     except Exception as e:
         print("Error!")
